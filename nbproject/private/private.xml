@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/modal_ver_compra.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/show.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/captura_incidencia.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/modal_alta_compras.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/create.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/index.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/incidencias/modal_autoriza_compra.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/resources/views/layouts/app.blade.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/app/Http/Controllers/IncidenciasController.php</file>
+            <file>file:/C:/wamp64/www/gilgaadmin/app/Compras.php</file>
+        </group>
+    </open-files>
+</project-private>

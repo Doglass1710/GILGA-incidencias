@@ -1,0 +1,18 @@
+select compras.id as id_compra,inc.estacion,compras.fecha_compra,compras.id_incidencia,
+                u.name as id_usuario,p.razon_social as proveedor,f.razon_social as facturar_a,compras.folio,
+                compras.observaciones,IFNULL(us.name,"") as usuario_autoriza,compras.autorizada_sn,
+                compras.subtotal,compras.iva,compras.total
+from compras              
+                join users as u on compras.id_usuario = u.id 
+                 left join users as us on compras.usuario_autoriza = us.id 
+                 join proveedores as p on compras.proveedor = p.proveedor
+                 join companias as f on compras.facturar_a=f.id 
+                 join incidencias as inc on inc.id=compras.id_incidencia   
+where 			cast(compras.fecha_compra as date) between cast(CURRENT_DATE()-1 as date) and cast(CURRENT_DATE() as date)
+union(
+                  SELECT compras_detalle.id_compra as id_compra,"","","","",concat("ID Incidencia: ", compras_detalle.id_incidencia), concat("Unidad: ",compras_detalle.unidad),concat("Tipo Cambio: ", compras_detalle.tipo_cambio), concat("Moneda: ",compras_detalle.moneda),concat("Producto: ", compras_detalle.producto_descripcion),concat("Cantidad: ",compras_detalle.cantidad),concat("Precio Unitario: ", compras_detalle.precio_unitario),concat("Total: ",compras_detalle.total),"" 
+    FROM compras_detalle
+join compras as com ON compras_detalle.id_compra=com.id
+where cast(com.fecha_compra as date) between cast(CURRENT_DATE()-1 as date) and cast(CURRENT_DATE() as date)                 
+order BY compras_detalle.id_compra, com.fecha_compra DESC            
+    )
